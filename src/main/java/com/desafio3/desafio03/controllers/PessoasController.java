@@ -33,7 +33,7 @@ public class PessoasController {
       p.setLastName(pessoa.getLastName());
       p.setCareer(pessoa.getCareer());
       Pessoas updated = pessoasRepository.save(p);
-      return ResponseEntity.ok().body(updated);
+      return ResponseEntity.status(HttpStatus.NO_CONTENT).body(updated);
     }).orElse(ResponseEntity.notFound().build());
   }
 
@@ -41,12 +41,16 @@ public class PessoasController {
   public ResponseEntity<?> delete(@PathVariable long id) {
     return pessoasRepository.findById(id).map(p -> {
       pessoasRepository.deleteById(id);
-      return ResponseEntity.ok().build();
-    }).orElse(ResponseEntity.notFound().build());
+      return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Success on delete");
+    }).orElse(ResponseEntity.badRequest().body("Failed on delete"));
   }
 
   @GetMapping("/listar")
-  public ResponseEntity<List<Pessoas>> findAll() {
-    return new ResponseEntity<List<Pessoas>>(pessoasRepository.findAll(), new HttpHeaders(), HttpStatus.OK);
+  public ResponseEntity<?> findAll() {
+    List<Pessoas> pessoas = pessoasRepository.findAll();
+    if (pessoas.size() == 0) {
+      return ResponseEntity.badRequest().body("Pessoas is not found");
+    }
+    return new ResponseEntity<List<Pessoas>>(pessoas, new HttpHeaders(), HttpStatus.OK);
   }
 }

@@ -2,6 +2,7 @@ package com.desafio3.desafio03.models;
 
 import lombok.*;
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,11 +15,14 @@ public class Pessoas {
   private Long id;
 
   @Column(name = "first_name")
+  @NotBlank(message = "{firstName.not.blank}")
   private String firstName;
 
   @Column(name = "last_name")
+  @NotBlank(message = "{lastName.not.blank}")
   private String lastName;
 
   @Column(nullable = false)
+  @NotBlank(message = "{career.not.blank}")
   private String career;
 }
