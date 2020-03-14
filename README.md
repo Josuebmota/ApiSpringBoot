@@ -34,8 +34,7 @@ INSERT INTO Pessoas (first_name, last_name, career) VALUES
 ```
 ## Funcionalidades
 
-> 1 - [Rotas da API]
-(https://github.com/Josuebmota/ApiSpringBoot/blob/master/src/main/java/com/desafio3/desafio03/controllers/PessoasController.java) (/api)
+> 1 - [Rotas da API](https://github.com/Josuebmota/ApiSpringBoot/blob/master/src/main/java/com/desafio3/desafio03/controllers/PessoasController.java) (/api)
 
 1. Listar Pessoas */pessoas/listar/*
 
