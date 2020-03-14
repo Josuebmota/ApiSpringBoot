@@ -34,35 +34,33 @@ INSERT INTO Pessoas (first_name, last_name, career) VALUES
 ```
 ## Funcionalidades
 
-> 1 - [Rotas da API](https://github.com/Josuebmota/ApiSpringBoot/blob/master/src/main/java/com/desafio3/desafio03/controllers/PessoasController.java) (/api)
+> 1 - [Rotas da API]
+(https://github.com/Josuebmota/ApiSpringBoot/blob/master/src/main/java/com/desafio3/desafio03/controllers/PessoasController.java) (/api)
 
 1. Listar Pessoas */pessoas/listar/*
+
 ![](https://user-images.githubusercontent.com/34459397/76682336-1488b180-65da-11ea-99ad-de38afdb48a2.png)
-> Rota de Listagem.
 
 2. Adicionar Pessoa */pessoas/adicionar*
+
 ![](https://user-images.githubusercontent.com/34459397/76682339-1d798300-65da-11ea-8e00-a1106d9b1a60.png)
-> Rota de Adicionar.
 
 3. Deletar Pessoa */pessoas/**{id}**/deletar*
-![](https://user-images.githubusercontent.com/34459397/76682355-4437b980-65da-11ea-85c4-ab602ad73235.png)
-> Rota de Deletar.
 
+![](https://user-images.githubusercontent.com/34459397/76682355-4437b980-65da-11ea-85c4-ab602ad73235.png)
 ![](https://user-images.githubusercontent.com/34459397/76682360-544f9900-65da-11ea-9b4d-e8460ee430f3.png)
-> Rota de Listagem.
 
 4. Atualizar Pessoa */pessoas/**{id}**/atualizar*
-![](https://user-images.githubusercontent.com/34459397/76682344-2b2f0880-65da-11ea-9d09-5ec39a85ea2f.png)
-> Rota de Atualizar.
 
+![](https://user-images.githubusercontent.com/34459397/76682344-2b2f0880-65da-11ea-9d09-5ec39a85ea2f.png)
 ![](https://user-images.githubusercontent.com/34459397/76682350-371aca80-65da-11ea-8420-087f476b985d.png)
-> Rota de Listagem.
 
 > 2 - Segurança
 
 5. Foi configurado uma [Autentificação básica](https://github.com/Josuebmota/ApiSpringBoot/blob/master/src/main/java/com/desafio3/desafio03/config/SegurancaConfig.java) para as rotas
 
 ![](https://user-images.githubusercontent.com/34459397/76682372-721cfe00-65da-11ea-917a-975e743127e2.png)
+
 > Autentificação básica.
 
 6. Sendo que na rota */listar/pessoas* a Autenticação básica é ignorada 
