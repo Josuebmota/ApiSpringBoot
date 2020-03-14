@@ -74,4 +74,5 @@ INSERT INTO Pessoas (first_name, last_name, career) VALUES
 2. Gerar imagem docker baseada no Dockerfile e enviar para o https://hub.docker.com/
 > 2 - Consumir uma api externa
 3. Esta [API](http://5e61af346f5c7900149bc5b3.mockapi.io/desafio03/employer) deve atualizar o banco na inicialização do projeto
+> 3 - Swagger
 4. Criar documentação da API usando Swagger2.
