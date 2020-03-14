@@ -27,13 +27,13 @@ public class PessoasController {
   }
 
   @PutMapping(value = "/{id}/atualizar")
-  public ResponseEntity<?> update(@PathVariable("id") long id, @Valid @RequestBody Pessoas pessoa) {
+  public ResponseEntity<Pessoas> update(@PathVariable("id") long id, @Valid @RequestBody Pessoas pessoa) {
     return pessoasRepository.findById(id).map(p -> {
       p.setFirstName(pessoa.getFirstName());
       p.setLastName(pessoa.getLastName());
       p.setCareer(pessoa.getCareer());
       Pessoas updated = pessoasRepository.save(p);
-      return ResponseEntity.status(HttpStatus.NO_CONTENT).body(updated);
+      return ResponseEntity.ok().body(updated);
     }).orElse(ResponseEntity.notFound().build());
   }
 
@@ -41,7 +41,7 @@ public class PessoasController {
   public ResponseEntity<?> delete(@PathVariable long id) {
     return pessoasRepository.findById(id).map(p -> {
       pessoasRepository.deleteById(id);
-      return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Success on delete");
+      return ResponseEntity.ok().body("Success on Delete");
     }).orElse(ResponseEntity.badRequest().body("Failed on delete"));
   }
 
