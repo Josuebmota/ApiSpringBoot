@@ -61,8 +61,6 @@ INSERT INTO Pessoas (first_name, last_name, career) VALUES
 
 ![](https://user-images.githubusercontent.com/34459397/76682372-721cfe00-65da-11ea-917a-975e743127e2.png)
 
-> Autentificação básica.
-
 6. Sendo que na rota */listar/pessoas* a Autenticação básica é ignorada 
 
 > 3 - [Tratamento de Exceções](https://github.com/Josuebmota/ApiSpringBoot/tree/master/src/main/java/com/desafio3/desafio03/exceptions)
