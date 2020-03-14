@@ -1,31 +1,22 @@
 
 ## Tecnologias utilizadas
 
-Nessa solução deve utilizada as seguintes tecnologias:
 - Java 1.8
 - Maven
-- SpringBoot 2+
-- Git
+- [SpringBoot 2+](https://start.spring.io/)
 - H2 Data Base
-- Mockito
-- jUnit
-- Swagger2
-## Desafio
-> Objetivo
-- O RH da empresa solicitou a equipe de Sistemas uma aplicação para gerenciar informações dos colaboradores da empresa.
-Seu objetivo é desenvolver uma API Rest para que a equipe de front-end realize as consultas nos endpoints e retorne as informações solicitadas pelo RH.
-Crie a API seguindo as orientações abaixo:
-> Regras
-- Projeto de conter duas branchs *develop* e *feature/crud-seunome* tudo deve ser desenvolvido na branch *feature/crud-seunome* depois realizado um merge para *develop*.
-- O prazo de enviar o código é de **48hs** a partir do compartilhamento do repositório
-- Enviar para repositório após concluir
-- Caso não conclua no prazo, informar em qual fase e item você conseguiu chegar.
-> Informações: 
-- Banco de dados: **H2**
+
+## Ferramentas Utilizadas
+
+- [Vs Code](https://code.visualstudio.com/docs/languages/java)
+- [Postman](https://www.postman.com/)
+
+## Informações
+- Banco de dados: [**H2**](https://github.com/Josuebmota/ApiSpringBoot/blob/master/src/main/resources/application.properties)
 - Console H2: /h2-console
 - Usuario de acesso ao banco de dados: **user**
 - Password de acesso ao banco de dados: **password**
-- Ao iniciar o projeto a aplicação automaticamente cria Banco de Dados e realiza um insert conforme instrucao SQL
+- Ao iniciar o projeto a aplicação automaticamente cria Banco de Dados e realiza um insert conforme instrucao [SQL](https://github.com/Josuebmota/ApiSpringBoot/blob/master/src/main/resources/data.sql).
 ```sql
 DROP TABLE IF EXISTS Pessoas;
 
@@ -41,65 +32,50 @@ INSERT INTO Pessoas (first_name, last_name, career) VALUES
 ('Bill', 'Gates', 'Billionaire Tech Entrepreneur'),
 ('Folrunsho', 'Alakija', 'Billionaire Oil Magnate');
 ```
-## Tarefas
-> Fase 01 - Estruturar API
-1. No projeto deve conter um pacote **model** 
-2. No pacote model deve conter uma Classe *Pessoas* com o seguintes atributos:
-```
-    private Long id;
-    private String first_name;
-    private String last_name;
-    private String career;
-```
-3. No projeto deve conter uma pacote com o nome **controller**
-4. No pacote controller deve conter uma classe com o nome *PessoasController*
-```
-public class PessoasController {
-    ...
-}
-```
-5. A porta padrão do projeto deve ser ser 9090
-6. O context-path da aplicação de ser */api*
-7. Os retornos devem usar Spring ResponseEntity para manipular a resposta HTTP
-```
-import org.springframework.http.ResponseEntity;
-```
-> Fase 02 - Rotas da API
-8. Criar Pessoas */pessoas/adicionar*
-* 8.1\. Cadastrar pessoa
-* 8.2\. Codigo de retorno esperado *Codigo HTTP 201 Created* ou *Codigo HTTP 200 Ok*
-* 8.3\. A api deve retornar o objeto criado
-9. Atualizar Pessoa */pessoas/atualizar*
-* 9.1\. Atualizar os dados da pessoa cadastradas
-* 9.2\. Codigo de retorno *Codigo HTTP 204 No Content*
-* 9.3\. A api deve retornar o objeto criado com os dados atualizado
-10. Deletar Pessoa */pessoas/**{id}**/deletar*
-* 10.1\. Deletar pessoa referente ao {id} informado
-* 10.2\. Codigo de retorno *Codigo HTTP 204 No Content*
-11. Listar Pessoas */pessoas/listar/*
-* 11.1\. Visualizar todas as informações de todas as pessoas.
-* 11.2\. Codigo de retorno *Codigo HTTP 200 Ok*
-12. O retorno da API deve ser no formato de JSON
-> Fase 03 - Validação dos Dados de entrada
-13. Todas as rotas deve ser validada para não aceitar valores *null* ou *vazio*, o retorno dos erros de validação deve ser Json informando qual campo apresentou erro.
-> Fase 04 - Testes
-14. Crie uma classe de teste com o nome *CrudTests*. Usar o framwork *jUnit*
-* 14.1\. Crie um metodos de teste para pelo menos uma operação do **CRUD**
-15. Criar classe de Teste com o nome *CrudMockTests* e use o framework Mockito para java para testar o metodo */pessoas/cadastrar*
-> Fase 05 - Segurança
-16. Configure uma Autenticação básica para suas rotas
-17. Ignorar a Autenticação básica na rota */listar/pessoas*
-> Fase 06 - Tratamento de Exceções
-18. Crie um pacote exceptions
-* 18.1\. Criar uma classe de exception para tratar erros de pessoas não localizadas *EmployerNotFoundException*.
-19. Crie um pacote handle
-* 19.1\. Crie uma Exception Handling para tratar o erro da exceção *EmployerNotFoundException*.
-> Fase 06 - Deploy
-20. Criar um Dockerfile e salve resource do seu projeto
-21. Gerar imagem docker baseada no Dockerfile e enviar para o https://hub.docker.com/
-> Fase 07 - Bonus
-22. Consumir uma api e atualizar o banco de dados na inicializaçāo do projeto
-* 22.1\. API - http://5e61af346f5c7900149bc5b3.mockapi.io/desafio03/employer
-* 22.2\. Criar documentação da API usando Swagger 2
+## Funcionalidades
 
+> 1 - [Rotas da API](https://github.com/Josuebmota/ApiSpringBoot/blob/master/src/main/java/com/desafio3/desafio03/controllers/PessoasController.java) (/api)
 
+1. Listar Pessoas */pessoas/listar/*
+![](https://user-images.githubusercontent.com/34459397/76682336-1488b180-65da-11ea-99ad-de38afdb48a2.png)
+> Rota de Listagem.
+
+2. Adicionar Pessoa */pessoas/adicionar*
+![](https://user-images.githubusercontent.com/34459397/76682339-1d798300-65da-11ea-8e00-a1106d9b1a60.png)
+> Rota de Adicionar.
+
+3. Deletar Pessoa */pessoas/**{id}**/deletar*
+![](https://user-images.githubusercontent.com/34459397/76682355-4437b980-65da-11ea-85c4-ab602ad73235.png)
+> Rota de Deletar.
+
+![](https://user-images.githubusercontent.com/34459397/76682360-544f9900-65da-11ea-9b4d-e8460ee430f3.png)
+> Rota de Listagem.
+
+4. Atualizar Pessoa */pessoas/**{id}**/atualizar*
+![](https://user-images.githubusercontent.com/34459397/76682344-2b2f0880-65da-11ea-9d09-5ec39a85ea2f.png)
+> Rota de Atualizar.
+
+![](https://user-images.githubusercontent.com/34459397/76682350-371aca80-65da-11ea-8420-087f476b985d.png)
+> Rota de Listagem.
+
+> 2 - Segurança
+
+5. Foi configurado uma [Autentificação básica](https://github.com/Josuebmota/ApiSpringBoot/blob/master/src/main/java/com/desafio3/desafio03/config/SegurancaConfig.java) para as rotas
+
+![](https://user-images.githubusercontent.com/34459397/76682372-721cfe00-65da-11ea-917a-975e743127e2.png)
+> Autentificação básica.
+
+6. Sendo que na rota */listar/pessoas* a Autenticação básica é ignorada 
+
+> 3 - [Tratamento de Exceções](https://github.com/Josuebmota/ApiSpringBoot/tree/master/src/main/java/com/desafio3/desafio03/exceptions)
+
+7. Foi construido uma classe para tratar os erros em conjunto de algumas [propriedades](https://github.com/Josuebmota/ApiSpringBoot/blob/master/src/main/resources/ValidationMessages.properties)
+
+## Atividades Futuras
+
+> 1 - Deploy
+1. Criar um Dockerfile e salvar resource do projeto
+2. Gerar imagem docker baseada no Dockerfile e enviar para o https://hub.docker.com/
+> 2 - Consumir uma api externa
+3. Esta [API](http://5e61af346f5c7900149bc5b3.mockapi.io/desafio03/employer) deve atualizar o banco na inicialização do projeto
+4. Criar documentação da API usando Swagger2.
