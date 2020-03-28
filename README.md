@@ -46,13 +46,11 @@ INSERT INTO Pessoas (first_name, last_name, career) VALUES
 
 3. Deletar Pessoa */pessoas/**{id}**/deletar*
 
-![](https://user-images.githubusercontent.com/34459397/76682355-4437b980-65da-11ea-85c4-ab602ad73235.png)
-![](https://user-images.githubusercontent.com/34459397/76682360-544f9900-65da-11ea-9b4d-e8460ee430f3.png)
+![](https://user-images.githubusercontent.com/34459397/77826297-4d05b080-70ed-11ea-9482-209e2b6d589f.png)
 
 4. Atualizar Pessoa */pessoas/**{id}**/atualizar*
 
-![](https://user-images.githubusercontent.com/34459397/76682344-2b2f0880-65da-11ea-9d09-5ec39a85ea2f.png)
-![](https://user-images.githubusercontent.com/34459397/76682350-371aca80-65da-11ea-8420-087f476b985d.png)
+![](https://user-images.githubusercontent.com/34459397/77826486-87bc1880-70ee-11ea-8c98-09a289ed0461.png)
 
 > 2 - Segurança
 
