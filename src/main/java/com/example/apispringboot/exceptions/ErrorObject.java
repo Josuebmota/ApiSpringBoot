@@ -1,4 +1,4 @@
-package com.desafio3.desafio03.exceptions;
+package com.example.apispringboot.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

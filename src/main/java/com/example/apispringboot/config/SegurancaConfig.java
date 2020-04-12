@@ -1,4 +1,4 @@
-package com.desafio3.desafio03.config;
+package com.example.apispringboot.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

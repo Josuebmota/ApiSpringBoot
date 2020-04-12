@@ -1,6 +1,6 @@
-package com.desafio3.desafio03.respository;
+package com.example.apispringboot.repository;
 
-import com.desafio3.desafio03.models.Pessoas;
+import com.example.apispringboot.models.Pessoas;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

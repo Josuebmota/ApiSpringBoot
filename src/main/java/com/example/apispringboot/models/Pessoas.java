@@ -1,11 +1,9 @@
-package com.desafio3.desafio03.models;
+package com.example.apispringboot.models;
 
-import lombok.*;
+import lombok.Data;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
 @Entity
 @Table(name = "PESSOAS")

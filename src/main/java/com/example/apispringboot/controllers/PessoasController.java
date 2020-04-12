@@ -1,12 +1,13 @@
-package com.desafio3.desafio03.controllers;
+package com.example.apispringboot.controllers;
+
 
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
 import org.springframework.http.*;
 
-import com.desafio3.desafio03.models.Pessoas;
-import com.desafio3.desafio03.respository.PessoasRepository;
+import com.example.apispringboot.models.Pessoas;
+import com.example.apispringboot.repository.PessoasRepository;
 
 import lombok.RequiredArgsConstructor;
 import javax.validation.Valid;
@@ -17,13 +18,25 @@ import java.util.List;
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*")
 public class PessoasController {
-
   @Autowired
   private PessoasRepository pessoasRepository;
+
+  PessoasController(PessoasRepository repo){
+    this.pessoasRepository = repo;
+  }
 
   @PostMapping("/adicionar")
   public ResponseEntity<Pessoas> create(@Valid @RequestBody Pessoas product) {
     return new ResponseEntity<Pessoas>(pessoasRepository.save(product), new HttpHeaders(), HttpStatus.CREATED);
+  }
+
+  @GetMapping("/listar")
+  public ResponseEntity<?> findAll() {
+    List<Pessoas> pessoas = pessoasRepository.findAll();
+    if (pessoas.size() == 0) {
+      return ResponseEntity.badRequest().body("Não existe pessoas cadastradas");
+    }
+    return new ResponseEntity<List<Pessoas>>(pessoas, new HttpHeaders(), HttpStatus.OK);
   }
 
   @PutMapping(value = "/{id}/atualizar")
@@ -43,14 +56,5 @@ public class PessoasController {
       pessoasRepository.deleteById(id);
       return ResponseEntity.ok().body("Success on Delete");
     }).orElse(ResponseEntity.badRequest().body("Failed on delete"));
-  }
-
-  @GetMapping("/listar")
-  public ResponseEntity<?> findAll() {
-    List<Pessoas> pessoas = pessoasRepository.findAll();
-    if (pessoas.size() == 0) {
-      return ResponseEntity.badRequest().body("Pessoas is not found");
-    }
-    return new ResponseEntity<List<Pessoas>>(pessoas, new HttpHeaders(), HttpStatus.OK);
   }
 }

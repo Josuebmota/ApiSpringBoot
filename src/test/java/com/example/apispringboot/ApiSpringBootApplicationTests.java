@@ -1,10 +1,10 @@
-package com.desafio3.desafio03;
+package com.example.apispringboot;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Desafio03ApplicationTests {
+class ApiSpringBootApplicationTests {
 
 	@Test
 	void contextLoads() {

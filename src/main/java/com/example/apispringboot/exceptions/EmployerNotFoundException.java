@@ -1,4 +1,4 @@
-package com.desafio3.desafio03.exceptions;
+package com.example.apispringboot.exceptions;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
