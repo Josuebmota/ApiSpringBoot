@@ -42,8 +42,8 @@ public class PessoasController {
   @PutMapping(value = "/{id}/atualizar")
   public ResponseEntity<Pessoas> update(@PathVariable("id") long id, @Valid @RequestBody Pessoas pessoa) {
     return pessoasRepository.findById(id).map(p -> {
-      p.setFirstName(pessoa.getFirstName());
-      p.setLastName(pessoa.getLastName());
+      p.setFirst_name(pessoa.getFirst_name());
+      p.setLast_name(pessoa.getLast_name());
       p.setCareer(pessoa.getCareer());
       Pessoas updated = pessoasRepository.save(p);
       return ResponseEntity.ok().body(updated);

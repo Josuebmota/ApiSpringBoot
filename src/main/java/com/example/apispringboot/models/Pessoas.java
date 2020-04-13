@@ -14,11 +14,11 @@ public class Pessoas {
 
   @Column(name = "first_name")
   @NotBlank(message = "{firstName.not.blank}")
-  private String firstName;
+  private String first_name;
 
   @Column(name = "last_name")
   @NotBlank(message = "{lastName.not.blank}")
-  private String lastName;
+  private String last_name;
 
   @Column(nullable = false)
   @NotBlank(message = "{career.not.blank}")
