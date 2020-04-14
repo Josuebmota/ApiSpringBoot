@@ -1,8 +1,10 @@
 package com.example.apispringboot.controllers;
 
-
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.web.bind.annotation.*;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
 import org.springframework.http.*;
 
@@ -16,6 +18,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/pessoas")
 @RequiredArgsConstructor
+@Api(value = "ApiRest Pessoas")
 @CrossOrigin(origins = "*")
 public class PessoasController {
   @Autowired
@@ -26,20 +29,33 @@ public class PessoasController {
   }
 
   @PostMapping("/adicionar")
+  @ApiOperation(value = "Adiciona Pessoas")
   public ResponseEntity<Pessoas> create(@Valid @RequestBody Pessoas product) {
-    return new ResponseEntity<Pessoas>(pessoasRepository.save(product), new HttpHeaders(), HttpStatus.CREATED);
+    return new ResponseEntity<Pessoas>(
+      pessoasRepository.save(product), 
+      new HttpHeaders(), 
+      HttpStatus.CREATED
+    );
   }
 
   @GetMapping("/listar")
+  @ApiOperation(value = "Retornar uma lista e pessoas")
   public ResponseEntity<?> findAll() {
     List<Pessoas> pessoas = pessoasRepository.findAll();
     if (pessoas.size() == 0) {
-      return ResponseEntity.badRequest().body("Não existe pessoas cadastradas");
+      return ResponseEntity
+        .badRequest()
+        .body("Não existe pessoas cadastradas");
     }
-    return new ResponseEntity<List<Pessoas>>(pessoas, new HttpHeaders(), HttpStatus.OK);
+    return new ResponseEntity<List<Pessoas>>(
+      pessoas, 
+      new HttpHeaders(), 
+      HttpStatus.OK
+    );
   }
 
   @PutMapping(value = "/{id}/atualizar")
+  @ApiOperation(value = "Atualiza uma determinada pessoa")
   public ResponseEntity<Pessoas> update(@PathVariable("id") long id, @Valid @RequestBody Pessoas pessoa) {
     return pessoasRepository.findById(id).map(p -> {
       p.setFirst_name(pessoa.getFirst_name());
@@ -51,6 +67,7 @@ public class PessoasController {
   }
 
   @DeleteMapping(path = { "/{id}/deletar" })
+  @ApiOperation(value = "Deletar uma determinada pessoa")
   public ResponseEntity<?> delete(@PathVariable long id) {
     return pessoasRepository.findById(id).map(p -> {
       pessoasRepository.deleteById(id);

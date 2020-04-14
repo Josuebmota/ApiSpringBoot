@@ -1,7 +1,5 @@
 package com.example.apispringboot;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -22,8 +20,6 @@ public class ApiSpringBootApplication {
 	@Autowired
 	private PessoasRepository pessoasRepository;
 	
-	private static final Logger log = LoggerFactory.getLogger(ApiSpringBootApplication.class);
-
 	public static void main(String[] args) {
 		SpringApplication.run(ApiSpringBootApplication.class, args);
 	}
@@ -45,8 +41,6 @@ public class ApiSpringBootApplication {
 			}catch(Error noFile){
 				throw new IllegalArgumentException("Falha ao consumir api externa");
 			}
-			
 		};
 	}
-
 }
