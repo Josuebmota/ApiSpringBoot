@@ -20,9 +20,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Override
   protected void configure(HttpSecurity http) throws Exception {
-    http.csrf().disable().authorizeRequests().antMatchers("/api/pessoas/listar").permitAll().anyRequest()
-        .authenticated().and().httpBasic().and().sessionManagement()
-        .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+    http.csrf().disable()
+    .authorizeRequests()
+    .antMatchers("/api/pessoas/listar","/h2-console/**")
+    .permitAll()
+    .anyRequest()
+    .authenticated()
+    .and().httpBasic()
+    .and().sessionManagement()
+    .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+    .and().headers().frameOptions().sameOrigin();
   }
 
   @Bean
