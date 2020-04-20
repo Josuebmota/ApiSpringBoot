@@ -1,11 +1,11 @@
 
 ## Tecnologias utilizadas
 
-☕️Java 1.8
-🍂Maven
-🌿 [SpringBoot 2+](https://start.spring.io/)
-🛢️ H2 Data Base
-📋 Swagger
+☕️Java 1.8 <br>
+🍂Maven <br>
+🌿 [SpringBoot 2+](https://start.spring.io/) <br>
+🛢️ H2 Data Base <br>
+📋 Swagger <br>
 🔎Junit
 
 ## Ferramentas Utilizadas
@@ -39,11 +39,11 @@ CREATE TABLE Pessoas (
 - Adicionar Pessoa */pessoas/adicionar*
 
 ```
-		{
-			"first_name": "Josué",
-			"last_name": "Mota",
-			"career":"Procurando Algo"
-		}
+{
+	"first_name": "Josué",
+	"last_name": "Mota",
+	"career":"Procurando Algo"
+}
 ```
 
 - Atualizar Pessoa */pessoas/**{id}**/atualizar*
