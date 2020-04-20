@@ -1,6 +1,7 @@
 package com.example.apispringboot.controllers;
 
 import org.springframework.beans.factory.annotation.*;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.web.bind.annotation.*;
 
 import io.swagger.annotations.Api;
@@ -69,9 +70,11 @@ public class PessoasController {
   @DeleteMapping(path = { "/{id}/deletar" })
   @ApiOperation(value = "Deletar uma determinada pessoa")
   public ResponseEntity<?> delete(@PathVariable long id) {
-    return pessoasRepository.findById(id).map(p -> {
+    try {
       pessoasRepository.deleteById(id);
       return ResponseEntity.ok().body("Success on Delete");
-    }).orElse(ResponseEntity.badRequest().body("Failed on delete"));
+    } catch (EmptyResultDataAccessException e) {
+      return ResponseEntity.badRequest().body("Failed on delete");
+    }
   }
 }
