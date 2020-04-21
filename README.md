@@ -83,3 +83,7 @@ docker run <nameimage>
 O primeiro comando, ira gerar o arquivo *.jar* , o segundo criará a imagem da aplicação e o terceiro executará o container.
 
 *obs*: Caso queira efetuar o download da imagem, acesse o [DockerHub](https://hub.docker.com/r/danmorthus/apispringboot).
+
+## [](<[https://github.com/Josuebmota/ApiSpringBoot](https://github.com/Josuebmota/ApiSpringBoot)#autor>)Autor
+
+- **Josué Batista Mota** - [GitHub](https://github.com/Josuebmota) - Email: [josuebatistam1@gmail.com](mailto:josuebatistam1@gmail.com)
