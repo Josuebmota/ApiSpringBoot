@@ -70,6 +70,7 @@ Ao rodar a aplicação acesse: http://localhost:9090/swagger-ui.html#
 
 ### Testes Unitários e Integração
 Testes voltados para as ações de criação, listagem, atualização e delete dos dados cadastrados.
+
 *obs* : para realizar os testes é necessario que a aplicação esteja rodando
 
 ### Docker
