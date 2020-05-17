@@ -29,11 +29,13 @@
     ```
 
 ## Execução
-Após efetuar o download e certificar que seu pc possui o java instalado, acesse o arquivo [principal](https://github.com/Josuebmota/ApiSpringBoot/blob/master/src/main/java/com/example/apispringboot/ApiSpringBootApplication.java) e execute.
+Após efetuar o download e certificar que seu pc possui o java instalado, acesse o arquivo [principal](https://github.com/Josuebmota/ApiSpringBoot/blob/master/src/main/java/com/example/apispringboot/ApiSpringBootApplication.java) e execute. Para facilitar os teste utilize o Insominia.
+
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=ApiSpringBoot&uri=https%3A%2F%2Fraw.githubusercontent.com%2FJosuebmota%2FApiSpringBoot%2Fmaster%2FInsomnia.json)
 
 ## Funcionalidades
 
-- Rotas da API
+- ***Rotas da API***
 	 - Listar Pessoas: */api/pessoas/listar/*
 	- Adicionar Pessoa: */pessoas/adicionar*
 
@@ -47,25 +49,25 @@ Após efetuar o download e certificar que seu pc possui o java instalado, acesse
 
 	- Deletar Pessoa: */pessoas/**{id}**/deletar*
 
-- Segurança <br>
+- ***Segurança*** <br>
 Foi configurado uma [Autentificação básica](https://github.com/Josuebmota/ApiSpringBoot/blob/master/src/main/java/com/desafio3/desafio03/config/SegurancaConfig.java) para as rotas. No entanto, na rota de listagem de usuários, tal autentificação não é necessária.
 
 	   Username: admin
 	   Password: admin
 
-- Tratamento de Exceções <br>
+- ***Tratamento de Exceções*** <br>
 Foi construído uma [classe](https://github.com/Josuebmota/ApiSpringBoot/tree/master/src/main/java/com/desafio3/desafio03/exceptions) para tratar os erros, em conjunto de algumas [propriedades](https://github.com/Josuebmota/ApiSpringBoot/blob/master/src/main/resources/ValidationMessages.properties).
 
-- Consumindo uma api externa <br>
+- ***Consumindo uma api externa*** <br>
 [Api](http://5e61af346f5c7900149bc5b3.mockapi.io/desafio03/employer) que  incrementa o banco ao inicializar a aplicação. <br> **obs**: Caso essa api externa, não esteja funcionando mais. Remova essa parte do [código](https://github.com/Josuebmota/ApiSpringBoot/blob/master/src/main/java/com/example/apispringboot/ApiSpringBootApplication.java).
 
-- Testes Unitários e Integração<br>
+- ***Testes Unitários e Integração***<br>
 Testes voltados para as ações de criação, listagem, atualização e delete dos dados cadastrados. <br>  **obs** : para realizar os testes é necessario que a aplicação esteja rodando
 
-- Swagger <br>
+- ***Swagger*** <br>
 Ao rodar a aplicação acesse: http://localhost:9090/swagger-ui.html#
 
--  Docker <br>
+-  ***Docker*** <br>
 Para rodar o DockerFile, é importante executar o seguintes comandos:
 
 	    ./mvnw package
